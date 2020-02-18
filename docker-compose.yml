@@ -24,11 +24,17 @@ services:
 
   # PHP (with Caddy)
   app:
-    image: ambientum/php:7.1-caddy
+    image: ambientum/php:7.3-nginx
     container_name: rdrkback-app
     volumes:
       - .:/var/www/app
     ports:
       - "81:8080"
+    environment:
+      - DB_DATABASE=rdrkback
+      - DB_HOST=mysql
+      - DB_USERNAME=rdrkback
+      - DB_PASSWORD=rdrkback
+      - DB_PORT=3306
     links:
       - mysql
