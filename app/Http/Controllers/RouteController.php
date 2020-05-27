@@ -16,7 +16,7 @@ class RouteController extends Controller
         $this->calculateRouteRequest = $calculateRouteRequest;
     }
 
-    public function calculate($start = "", $end = "")
+    public function quote($start = "", $end = "")
     {
         $this->calculateRouteRequest->validate($start, $end);
 
