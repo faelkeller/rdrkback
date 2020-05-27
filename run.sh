@@ -3,6 +3,8 @@
 echo Uploading Application container
 docker-compose up -d
 
+sleep 10
+
 echo Copying the configuration example file
 docker exec -it rdrkback-app cp .env.example .env
 
