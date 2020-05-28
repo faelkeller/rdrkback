@@ -37,7 +37,7 @@ Nas duas formas de execução <strong>o GIT é um pré requisito</strong>
 
 <h2>4 - Como rodar o projeto</h2>
 
-<p>Para execução do projeto pelo docker <strong>(recomendado)</strong>, é necessário somente a execução do shell script "run.sh" na raiz do projeto. Com a execução desse script, as imagens são baixadas e executadas com todo o ambiente ja configurado (php, laravel, mysql e nginx). O teste pode ser acessado pelo navegador em "http://localhost:81/" </p>
+<p>Para execução do projeto pelo docker <strong>(recomendado)</strong>, é necessário somente a execução do shell script "rundocker.sh" na raiz do projeto. Com a execução desse script, as imagens são baixadas e executadas com todo o ambiente ja configurado (php, laravel, mysql e nginx). O teste pode ser acessado pelo navegador em "http://localhost:81/" </p>
 
 <p>
     Para execução do projeto manualmente, tem-se que criar uma base de dados mysql e apontar as configurações no arquivo .env na raiz do projeto. Em seguida deve-se instalar as dependencias com o composer "composer install" . O laravel fornece um webserver interno que pode ser iniciado executando o seguinte comando "php artisan serve". O sistema pode ser acessado em "http://localhost:8000"
