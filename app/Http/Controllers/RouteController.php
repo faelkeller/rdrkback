@@ -3,24 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuoteRequest;
-use App\Route;
+use App\Services\RouteService;
 
 class RouteController extends Controller
 {
 
     protected $quoteRequest;
-    protected $route;
+    protected $routeService;
 
-    public function __construct(QuoteRequest $quoteRequest, Route $route
-    ){
+    public function __construct(QuoteRequest $quoteRequest, RouteService $routeService){
         $this->quoteRequest = $quoteRequest;
-        $this->route = $route;
+        $this->routeService = $routeService;
     }
 
     public function quote($start = "", $end = ""){
         $this->quoteRequest->validate($start, $end);
 
-        $quote = $this->route->quote($start, $end);
+        $quote = $this->routeService->quote($start, $end);
 
         return json_encode($quote);
     }
