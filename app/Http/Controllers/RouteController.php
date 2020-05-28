@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuoteRequest;
 use App\Services\Contracts\RouteServiceInterface;
+Use Illuminate\Http\Request;
+use App\Http\Requests\RouteRequest;
 
 class RouteController extends Controller
 {
@@ -22,5 +24,18 @@ class RouteController extends Controller
         $quote = $this->routeService->quote($start, $end);
 
         return json_encode($quote);
+    }
+
+    public function store(RouteRequest $request){
+
+        $this->routeService->create(
+            [
+                "start" => $request->from,
+                "end" => $request->to,
+                "price" => $request->price
+            ]
+        );
+
+        return json_encode(["success"]);
     }
 }

@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/quote/{start}/{end}', "RouteController@quote");
+
+Route::post('/route', "RouteController@store");

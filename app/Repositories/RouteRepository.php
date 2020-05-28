@@ -16,4 +16,8 @@ class RouteRepository implements RouteRepositoryInterface
     public function getAllRoutesByStart($start, $notEnds = []){
         return $this->model->where(["start" => $start])->whereNotIn("end", $notEnds)->get();;
     }
+
+    public function create($data){
+        return $this->model->firstOrCreate($data);
+    }
 }

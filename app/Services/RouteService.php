@@ -14,11 +14,14 @@ class RouteService implements RouteServiceInterface
         $this->route = $route;
     }
 
-
     public function quote($start, $end){
         $routesByStart = $this->getAllRoutesByStart($start, $end);
 
         return $this->checkPrice($routesByStart);
+    }
+
+    public function create($data = []){
+        $this->route->create($data);
     }
 
     protected function checkPrice($routes){
