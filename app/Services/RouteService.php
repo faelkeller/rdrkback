@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Route;
+use App\Repositories\Contracts\RouteRepositoryInterface;
 use App\Services\Contracts\RouteServiceInterface;
 
 class RouteService implements RouteServiceInterface
@@ -10,7 +10,7 @@ class RouteService implements RouteServiceInterface
     protected $routesForEnd = [];
     protected $route;
 
-    public function __construct(Route $route){
+    public function __construct(RouteRepositoryInterface $route){
         $this->route = $route;
     }
 
@@ -46,7 +46,7 @@ class RouteService implements RouteServiceInterface
     }
 
     protected function getAllRoutesByStart($start, $end, $notEnds = [], $completeRoute = [], $sumPrice = 0){
-        $quotes = $this->route->where(["start" => $start])->whereNotIn("end", $notEnds)->get();
+        $quotes = $this->route->getAllRoutesByStart($start, $notEnds);
 
         $routes = [];
 

@@ -17,6 +17,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Services\Contracts\RouteServiceInterface',
             'App\Services\RouteService'
         );
+
+        $this->app->bind(
+            'App\Repositories\Contracts\RouteRepositoryInterface',
+            'App\Repositories\RouteRepository'
+        );
     }
 
     /**
