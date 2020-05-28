@@ -43,3 +43,8 @@ Nas duas formas de execução <strong>o GIT é um pré requisito</strong>
     Para execução do projeto manualmente, tem-se que criar uma base de dados mysql e apontar as configurações no arquivo .env na raiz do projeto. Em seguida deve-se instalar as dependencias com o composer "composer install" . O laravel fornece um webserver interno que pode ser iniciado executando o seguinte comando "php artisan serve". O sistema pode ser acessado em "http://localhost:8000"
 </p>
 
+<h2>5 - Testes</h2>
+<p>
+    Para execução dos testes, execute o script test.sh
+</p>
+
