@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuoteRequest;
-use App\Services\RouteService;
+use App\Services\Contracts\RouteServiceInterface;
 
 class RouteController extends Controller
 {
@@ -11,7 +11,7 @@ class RouteController extends Controller
     protected $quoteRequest;
     protected $routeService;
 
-    public function __construct(QuoteRequest $quoteRequest, RouteService $routeService){
+    public function __construct(QuoteRequest $quoteRequest, RouteServiceInterface $routeService){
         $this->quoteRequest = $quoteRequest;
         $this->routeService = $routeService;
     }

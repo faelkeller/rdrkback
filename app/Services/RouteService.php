@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Route;
+use App\Services\Contracts\RouteServiceInterface;
 
-class RouteService
+class RouteService implements RouteServiceInterface
 {
     protected $routesForEnd = [];
     protected $route;
